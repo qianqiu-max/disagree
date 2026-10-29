@@ -1,0 +1,15 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cloudFunctions": {
+    "maxDuration": 120,
+    "externalNodeModules": ["discord.js"]
+  },
+  "agents": {
+    "timeout": 600,
+    "framework": "openai-agents-sdk",
+    "sandbox": {
+      "timeout": 600
+    }
+  }
+}

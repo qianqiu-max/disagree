@@ -1,0 +1,309 @@
+.shell {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+}
+
+.blob1,
+.blob2 {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(70px);
+}
+
+.blob1 {
+  top: -160px;
+  left: -160px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, #f5c84218 0%, transparent 70%);
+}
+
+.blob2 {
+  bottom: -120px;
+  right: -120px;
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, #5a4af215 0%, transparent 70%);
+}
+
+.stage {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(1440px, 96vw);
+  height: min(88vh, 860px);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--bg-border);
+  background: #0e0e13;
+  box-shadow: var(--shadow-card), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+.topbar {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 16px;
+  background: #131318;
+  border-bottom: 1px solid var(--bg-border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid rgba(245, 200, 66, 0.3);
+  background: rgba(245, 200, 66, 0.1);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.brand strong {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border: 1px solid var(--bg-border);
+  background: #2a292f;
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+.searchWrap {
+  flex: 1;
+  max-width: 520px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.searchWrap input {
+  width: 100%;
+  height: 32px;
+  padding: 0 48px 0 30px;
+  border-radius: 4px;
+  border: 1px solid var(--bg-border);
+  background: #0e0e13;
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  outline: none;
+}
+
+.searchWrap input:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 1px var(--accent-gold), 0 0 16px rgba(245, 200, 66, 0.04);
+}
+
+.searchWrap kbd {
+  position: absolute;
+  right: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+  background: #2a292f;
+  border: 1px solid var(--bg-border);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.topRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.updated {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.refreshBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 4px;
+  border: 1px solid var(--bg-border);
+  background: #1f1f25;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.refreshBtn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.refreshBtn:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.spin {
+  display: inline-block;
+  animation: spin 0.8s linear infinite;
+}
+
+.lang {
+  display: flex;
+  background: #1b1b20;
+  border: 1px solid var(--bg-border);
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.lang button {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.langOn {
+  background: #2a292f !important;
+  color: var(--accent-gold) !important;
+}
+
+.chips {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px;
+  background: rgba(19, 19, 24, 0.8);
+  border-bottom: 1px solid var(--bg-border);
+  overflow-x: auto;
+}
+
+.chip, .chipOn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 99px;
+  border: 1px solid var(--bg-border);
+  background: #1b1b20;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 140ms ease, color 140ms ease, border-color 140ms ease, transform 140ms ease;
+}
+
+.chip:hover {
+  border-color: rgba(245, 200, 66, 0.45);
+  color: var(--text-primary);
+}
+
+.chip:active, .chipOn:active {
+  transform: scale(0.97);
+}
+
+.chipOn {
+  background: var(--accent-gold);
+  color: #0a0a0f;
+  border-color: var(--accent-gold);
+}
+
+.chip em, .chipOn em {
+  font-style: normal;
+  font-size: 10px;
+  padding: 0 5px;
+  border-radius: 99px;
+  background: rgba(0,0,0,0.18);
+  min-width: 16px;
+  text-align: center;
+}
+
+.chip em { background: #2a292f; }
+
+.chipBusy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 14px;
+}
+
+.chipSpin {
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid rgba(10, 10, 15, 0.28);
+  border-top-color: #0a0a0f;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.workspace {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 900px) {
+  .stage {
+    width: min(100vw - 16px, 960px);
+    height: min(94vh, 900px);
+    border-radius: 14px;
+  }
+  .topbar { gap: 8px; }
+  .subtitle, .searchWrap kbd, .updated { display: none; }
+  .workspace > :nth-child(2),
+  .workspace > :nth-child(3) { display: none; }
+  .threadMode > :nth-child(1) { display: none; }
+  .threadMode > :nth-child(2) { display: flex; flex: 1; }
+  .threadMode > :nth-child(3) { display: flex; max-height: 40%; }
+}
